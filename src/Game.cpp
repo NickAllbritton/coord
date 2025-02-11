@@ -29,7 +29,19 @@ void Game::draw()
 
 void Game::events()
 {
-    // TODO: handle events
+    for(auto event = sf::Event{}; window.pollEvent(event);)
+    {
+        switch(event.type)
+        {
+            case sf::Event::Closed:
+                window.close(); // OS close-window code (Win+Q on my laptop)
+                break;
+            case sf::Event::KeyPressed:
+                if(event.key.code == sf::Keyboard::Q) window.close(); //  press q to quit the game
+                else if(event.key.code == sf::Keyboard::P) // TODO: Press P to pause
+                break;
+        }
+    }
 }
 
 void Game::update()
