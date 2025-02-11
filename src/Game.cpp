@@ -16,7 +16,7 @@ Game::Game(sf::RenderWindow& wnd, Resources& res)
     int titleTextSize = height * 0.1; // title height is 10% of window height
     title.setCharacterSize(titleTextSize);
     title.setPosition({ width*0.5 - title.getLocalBounds().getSize().x*0.5, 0.f });
-    title.setFillColor(sf::Color(25, 5, 150));
+    title.setFillColor(sf::Color(93, 20, 255));
 }
 
 void Game::run()
