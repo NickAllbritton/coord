@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+coord
+
+# Specific to my build system
+.vscode/
