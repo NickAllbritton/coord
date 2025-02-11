@@ -34,7 +34,7 @@ void Game::events()
         switch(event.type)
         {
             case sf::Event::Closed:
-                window.close(); // OS close-window code (Win+Q on my laptop)
+                window.close(); // OS close-window code (Win+Q on my laptop) (Alt+F4 on windows)
                 break;
             case sf::Event::KeyPressed:
                 if(event.key.code == sf::Keyboard::Q) window.close(); //  press q to quit the game
