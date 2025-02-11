@@ -1,9 +1,22 @@
 #include "Game.h"
 
-Game::Game(sf::RenderWindow& wnd)
-    : window(wnd)
+Game::Game(sf::RenderWindow& wnd, Resources& res)
+    : window(wnd), res(res)
 {
+    // Load resources
+    res.loadFonts();
 
+    // Calculate proportions of window client area
+    width = window.getSize().x;
+    height= window.getSize().y;
+
+
+    title.setString("COORDN8");
+    title.setFont(res.vanilla);
+    int titleTextSize = height * 0.1; // title height is 10% of window height
+    title.setCharacterSize(titleTextSize);
+    title.setPosition({ width*0.5 - title.getLocalBounds().getSize().x*0.5, 0.f });
+    title.setFillColor(sf::Color(25, 5, 150));
 }
 
 void Game::run()
@@ -24,7 +37,9 @@ void Game::run()
 
 void Game::draw()
 {
-    // TODO: draw stuff
+    // Draw title
+    window.draw(title);
+
 }
 
 void Game::events()

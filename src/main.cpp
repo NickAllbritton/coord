@@ -5,7 +5,10 @@ int main()
 {
     auto wnd = sf::RenderWindow{ sf::VideoMode::getFullscreenModes().at(0), "COORD", sf::Style::Fullscreen };
 
-    Game g(wnd);
+
+    Resources r("./resources/");
+
+    Game g(wnd, r);
 
     while(wnd.isOpen()) g.run();
 
